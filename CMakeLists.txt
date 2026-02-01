@@ -11,3 +11,7 @@ if (MSVC)
 else ()
     target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic)
 endif ()
+
+find_package(X11 REQUIRED)
+
+target_link_libraries(activity_tracker PRIVATE X11::X11)
